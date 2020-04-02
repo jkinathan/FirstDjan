@@ -1,3 +1,9 @@
 h3 {
-    color: aqua;
+    color: rgb(44, 219, 88);
+}
+
+table,
+th,
+td {
+    border: 2px solid black;
 }

@@ -2,13 +2,34 @@
 <html>
 {% load staticfiles %}
 <head>
-<title>First Django App</title>
+<title>Django Level Two</title>
 <link rel ="stylesheet" href={% static "css/mystyle.css" %}/>
 </head>
 
 <body>
-<h3><b>Hello This is Index with hell yeah am loving Django</b></h3><br>
+<h3><b>Hi Welcome to django level two</b></h3><br>
 <img src = "{% static "images/myth3.jpeg" %}" alt = "Uhh Didnot show!"><br>
+<h2>Here are your access records</h2>
+
+    <div class="djantwo">
+        {% if access_records %}
+            <table>
+                <thead>
+                    <th>Site name</th>
+                    <th>Date Accessed</th>
+                <thead>
+                {% for acc in access_records %}
+                <tr>
+                    <td>{{ acc.name }}</td>
+                    <td>{{ acc.date }}</td>
+                </tr>
+                {% endfor %} 
+            </table>
+        {% else %}
+            <p>No Access Records Found!</p>
+        {% endif %}
+               
+    </div>
 
 {{ insert_me }}
 </body>
