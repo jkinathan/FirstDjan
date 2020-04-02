@@ -3,35 +3,43 @@
 {% load staticfiles %}
 <head>
 <title>Django Level Two</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 <link rel ="stylesheet" href={% static "css/mystyle.css" %}/>
 </head>
 
 <body>
-<h3><b>Hi Welcome to django level two</b></h3><br>
-<img src = "{% static "images/myth3.jpeg" %}" alt = "Uhh Didnot show!"><br>
-<h2>Here are your access records</h2>
+<div class = "container">
+    <div class="jumbotron">
+         <h3>
+        <b>Hi Welcome to django level two</b></h3><br>
+        <img src = "{% static "images/myth3.jpeg" %}" alt = "Uhh Didnot show!"><br>
+    <h2>Here are your access records</h2>
 
-    <div class="djantwo">
-        {% if access_records %}
-            <table>
-                <thead>
-                    <th>Site name</th>
-                    <th>Date Accessed</th>
-                <thead>
-                {% for acc in access_records %}
-                <tr>
-                    <td>{{ acc.name }}</td>
-                    <td>{{ acc.date }}</td>
-                </tr>
-                {% endfor %} 
-            </table>
-        {% else %}
-            <p>No Access Records Found!</p>
-        {% endif %}
-               
+        <div class="djantwo">
+            {% if access_records %}
+                <table>
+                    <thead>
+                        <th>Site name</th>
+                        <th>Date Accessed</th>
+                    <thead>
+                    {% for acc in access_records %}
+                    <tr>
+                        <td>{{ acc.name }}</td>
+                        <td>{{ acc.date }}</td>
+                    </tr>
+                    {% endfor %} 
+                </table>
+            {% else %}
+                <p>No Access Records Found!</p>
+            {% endif %}
+                
+        </div>
+
     </div>
-
-{{ insert_me }}
+   
+    {{ insert_me }}
+    </div>
 </body>
 
 </html>
