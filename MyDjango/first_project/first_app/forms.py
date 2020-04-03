@@ -11,13 +11,3 @@ class FormName(forms.Form):
     verifyemail =forms.EmailField(label="Enter your Email again!!!")
     text = forms.CharField(widget = forms.Textarea)
     
-    #python 3 explicitly
-    # def clean(self):
-    #     all_clean_data = super().clean()
-    #     email = all_clean_data['email']
-    #     vemail = all_clean_data['verifyemail']
-        
-    #     if email != vemail:
-    #         raise forms.ValidationError("Make sure both emails match")
-    # botcatcher = forms.CharField(required=False, widget = forms.HiddenInput, validators=[validators.MaxLengthValidator(0)])
-   
