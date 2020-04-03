@@ -20,9 +20,4 @@ class FormName(forms.Form):
     #     if email != vemail:
     #         raise forms.ValidationError("Make sure both emails match")
     # botcatcher = forms.CharField(required=False, widget = forms.HiddenInput, validators=[validators.MaxLengthValidator(0)])
-    
-    # def clean_botcatcher(self):
-    #     botcher = self.cleaned_data['botcatcher']
-    #     if len(botcher) > 0:
-    #         raise forms.ValidationError("GOTCHA BOT!")
-    #     return botcher
+   
