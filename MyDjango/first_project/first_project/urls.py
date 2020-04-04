@@ -18,8 +18,10 @@ from django.contrib import admin
 from first_app import views
 from django.conf.urls import include
 
+app_name = 'firstapp'
+
 urlpatterns = [
     url(r'^$',views.index,name='index'),
-    url(r'^first_app/',include('first_app.urls')),
+    url(r'^first_app/',include('first_app.urls',namespace='firstapp')),
     url(r'^admin/', include(admin.site.urls)),
 ]

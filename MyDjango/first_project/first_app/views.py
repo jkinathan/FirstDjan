@@ -9,6 +9,11 @@ def index(request):
     date_dict = {'access_records' : webpages_list}
     return render(request, 'first_app/index.html',context=date_dict)
 
+#relative urls view
+def relative(request):
+    myRel = {'rella':"Say my Name to Relative URLSs...!"}
+    return render(request,'first_app/relative_url.html',context=myRel)
+
 def form_view_name(request):
     form = forms.FormName()#creating a new instance of the formName we created in forms.py and store it in form now called
     

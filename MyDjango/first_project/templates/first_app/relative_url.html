@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>Relative urls</title>
+    </head>
+
+    <body>
+    <div class="container">
+        <div class="jumbotron">
+        <h2>Here i am using relative urls for Django</h2>
+        
+          {{ rella }}
+          <a href="{% url 'admin:index' %}">ADMIN</a> <!--this is for the admin-->
+          <a href="{% url 'firstapp:Myform' %}">Formpage</a>
+          <a href="{% url 'index' %}">Index Page</a><!--and this is for the index page staright up-->
+          {% comment %} Remember no spaces before or after firstapp:Myform take note when using relative urls {% endcomment %}
+        </div>
+    </div>
+    </body>
+</html>
