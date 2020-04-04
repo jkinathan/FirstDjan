@@ -4,7 +4,7 @@ from first_app import views
 
 #TEMPLATE TAGGING 
 
-#so here i removed the app_name = 'firstapp' from this urls.py in first_app 
+#so here i removed the app_name = 'firstapp' from this urls.py in first_app  please check the project urls.py for the change
 
 urlpatterns = [
     url(r'^$',views.index,name='index'),
