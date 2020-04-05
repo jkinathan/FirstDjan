@@ -1,9 +1,14 @@
-h3 {
-    color: rgb(44, 219, 88);
-}
-
-table,
-th,
-td {
-    border: 2px solid black;
-}
+    h3 {
+        color: rgb(44, 219, 88);
+    }
+    
+    table,
+    th,
+    td {
+        border: 2px solid black;
+    }
+    
+    .myhover a:hover {
+        color: #9c2727;
+        background-color: transparent;
+    }
