@@ -5,13 +5,14 @@ from . import forms
 # Create your views here.
 
 def index(request):
+    
     webpages_list = Accessrecord.objects.order_by('date')
-    date_dict = {'access_records' : webpages_list}
+    date_dict = {'access_records' : webpages_list,'text':'hello world','number':100,'title':'HomePage'}
     return render(request, 'first_app/index.html',context=date_dict)
 
 #relative urls view
 def relative(request):
-    myRel = {'rella':"Say my Name to Relative URLSs...!"}
+    myRel = {'rella':"Say my Name to Relative URLSs...!",'title':'RELATIVE PAGE'}
     return render(request,'first_app/relative_url.html',context=myRel)
 
 def form_view_name(request):
