@@ -20,9 +20,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="myhover"><a href="#">BRAND</a></li>
-            <li><a href="#">Admin</a></li>
-            <li><a href="#">Other</a></li> 
+            <li class="myhover"><a class="nav navbar-brand" href="{% url 'index' %}">BRAND</a></li>
+            <li><a  class="nav navbar-brand" href="{% url 'admin:index' %}">Admin</a></li>
+            <li><a  class="nav navbar-brand" href="{% url 'firstapp:relname' %}">Other</a></li> 
           
         </div><!--/.nav-collapse -->
       </div>
