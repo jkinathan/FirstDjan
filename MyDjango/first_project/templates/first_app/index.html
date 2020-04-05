@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html>
-{% load staticfiles %}
-<head>
-<title>Django Level Two</title>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% extends 'first_app/base.html' %}
 
-<link rel ="stylesheet" href={% static "css/mystyle.css" %}/>
-</head>
-
-<body>
-<div class = "container">
+    {% block body_block %}
     <div class="jumbotron">
          <h3>
         <b>Hi Welcome to django level two</b></h3><br>
@@ -35,11 +26,7 @@
             {% endif %}
                 
         </div>
-
     </div>
-   
     {{ insert_me }}
-    </div>
-</body>
 
-</html>
+    {% endblock %}
