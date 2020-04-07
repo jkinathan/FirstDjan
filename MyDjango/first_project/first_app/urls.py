@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^$',views.index,name='index'),
     url(r'^formspage',views.form_view_name,name='Myform'),
     url(r'^relative/$', views.relative,name='relname'),#this is the page for testing relative paths in django
+    url(r'^register/$',views.register,name='register'),
 ]
