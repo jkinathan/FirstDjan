@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from first_app.models import UserProfileInfo
 
 
-class UserForm(forms.ModelForm):
+class UserForm(forms.ModelForm):#inheriting from forms.ModelForm
     password = forms.CharField(widget=forms.PasswordInput())
     class Meta():
         model = User
