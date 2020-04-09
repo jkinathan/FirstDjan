@@ -67,4 +67,21 @@ def register(request):
         
     return render (request,'first_app/register.html',
                {'registered':registered,'user_form':user_form,'profile_form':profile_form})#dope as way to pass in multiple contexts heheh been looking for this big time hahaha
+
+
+def user_login(request):
     
+    if(request.method == 'POST'):
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        user = authenticate(username=username,password=password)
+        
+        if user:
+            if user.is_active:
+                login(request,user)
+                return HttpResponseRedirect(reverse('index'))
+            else:
+                return HttpResponse("Account Not Active")
+        else:
+            print("Someone tried to login and failed")   
