@@ -17,6 +17,10 @@ def index(request):
     date_dict = {'access_records' : webpages_list,'text':'hello world','number':100,'title':'HomePage'}
     return render(request, 'first_app/index.html',context=date_dict)
 
+@login_required #to make sure the view below requires a login
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index'))
 #relative urls view
 def relative(request):
     myRel = {'rella':"Say my Name to Relative URLSs...!",'title':'RELATIVE PAGE'}
@@ -84,4 +88,7 @@ def user_login(request):
             else:
                 return HttpResponse("Account Not Active")
         else:
-            print("Someone tried to login and failed")   
+            print("Someone tried to login and failed")
+            return HttpResponse("Invalid login details supplied")
+    else:
+        return render(request,'first_app/login.html',{})
