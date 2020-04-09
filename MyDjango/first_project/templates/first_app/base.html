@@ -24,7 +24,11 @@
             <li><a  class="nav navbar-brand" href="{% url 'firstapp:register' %}">Register</a></li>
             <li><a  class="nav navbar-brand" href="{% url 'admin:index' %}">Admin</a></li>
             <li><a  class="nav navbar-brand" href="{% url 'firstapp:relname' %}">Other</a></li> 
-          
+            {% if user.is_authenticated %}
+              <li><a  class="nav navbar-brand" href="{% url 'logout' %}">Logout</a></li> 
+            {% else %}
+              <li><a  class="nav navbar-brand" href="{% url 'firstapp:login' %}">Login</a></li> 
+            {% endif %}
         </div><!--/.nav-collapse -->
       </div>
     </nav>

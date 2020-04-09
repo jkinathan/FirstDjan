@@ -21,6 +21,7 @@ def index(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
+
 #relative urls view
 def relative(request):
     myRel = {'rella':"Say my Name to Relative URLSs...!",'title':'RELATIVE PAGE'}
