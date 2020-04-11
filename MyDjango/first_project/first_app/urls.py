@@ -5,7 +5,7 @@ from first_app import views
 #TEMPLATE TAGGING 
 
 #so here i removed the app_name = 'firstapp' from this urls.py in first_app  please check the project urls.py for the change
-
+#edited traditional path links to url links
 urlpatterns = [
     url(r'^$',views.index,name='index'),
     url(r'^formspage',views.form_view_name,name='Myform'),
