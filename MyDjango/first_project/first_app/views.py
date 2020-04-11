@@ -1,3 +1,4 @@
+#FUNCTION BASED VIEWS
 from django.shortcuts import render
 from django.http import HttpResponse
 from first_app.models import Webpage, Topic, Accessrecord
@@ -10,6 +11,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required # if u require a user to be logged in 
 # Create your views here.
+
 
 def index(request):
     
