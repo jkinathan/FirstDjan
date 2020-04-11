@@ -95,3 +95,5 @@ def user_login(request):
             return HttpResponse("Invalid login details supplied")
     else:
         return render(request,'first_app/login.html',{})
+    
+#getting on with Class based views
