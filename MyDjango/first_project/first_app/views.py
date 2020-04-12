@@ -10,8 +10,15 @@ from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required # if u require a user to be logged in 
+
+#class based view imports
+from django.views.generic import View
 # Create your views here.
 
+#a class based view for the index 
+class CBView(View): #which is inheriting from our imported View
+    def get(self,request):
+        return HttpResponse("CLASS BASED VIEWS ARE COOL!")
 
 def index(request):
     
