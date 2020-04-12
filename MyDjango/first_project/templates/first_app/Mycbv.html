@@ -2,7 +2,8 @@
 
 {% block body_block %}
 <h1>Testing my template views</h1>
-<h2>Injecting content {{ injectme }}</h2>
+{% comment %} #here is how we pass in arguments from the views.py which was like our controller in laravel now to django {% endcomment %}
+<h2>Injecting content :{{ injectme }}</h2>
 {% comment %} injectme is the key for our context dictionary {% endcomment %}
 
 {% endblock body_block %}
