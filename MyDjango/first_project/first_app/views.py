@@ -12,14 +12,19 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required # if u require a user to be logged in 
 
 #class based view imports
-from django.views.generic import View
+from django.views.generic import View, TemplateView
 # Create your views here.
 
 #a class based view for the index 
-class CBView(View): #which is inheriting from our imported View
-    def get(self,request):
-        return HttpResponse("CLASS BASED VIEWS ARE COOL!")
-
+class CBView(TemplateView): #which is inheriting from our imported View
+    template_name = 'first_app/Mycbv.html'
+    #now doing the returning dictionary
+    
+    def get_context_data(self, **kwargs): #take **kwargs keyword arguments and take them as a dictionary and for the *args its just for simple arguments and you are not specifying the number of arguments required in a function call
+        context = super(TemplateView, self).get_context_data(**kwargs) #python 2.7 has issues mahn so we use --super(TemplateView, self)-- instead of super() just mehn am shifting to python 3 
+        context['injectme'] = 'Basic Injection'#here is the real context you pass in the key and values
+        return context
+    
 def index(request):
     
     webpages_list = Accessrecord.objects.order_by('date')

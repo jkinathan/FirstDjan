@@ -1,0 +1,8 @@
+{% extends 'first_app/base.html' %}
+
+{% block body_block %}
+<h1>Testing my template views</h1>
+<h2>Injecting content {{ injectme }}</h2>
+{% comment %} injectme is the key for our context dictionary {% endcomment %}
+
+{% endblock body_block %}
