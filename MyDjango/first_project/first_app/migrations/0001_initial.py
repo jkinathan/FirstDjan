@@ -30,12 +30,12 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(unique=True, max_length=265)),
                 ('url', models.URLField(unique=True)),
-                ('topic', models.ForeignKey(to='first_app.Topic')),
+                ('topic', models.ForeignKey(to='first_app.Topic',on_delete = models.CASCADE)),
             ],
         ),
         migrations.AddField(
             model_name='accessrecord',
             name='name',
-            field=models.ForeignKey(to='first_app.Webpage'),
+            field=models.ForeignKey(to='first_app.Webpage',on_delete = models.CASCADE),
         ),
     ]

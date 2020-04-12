@@ -8,7 +8,8 @@ from first_app.forms import UserForm, UserProfileInfoForm
 #these are for the login now
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponseRedirect, HttpResponse
-from django.core.urlresolvers import reverse
+from django.urls import reverse
+#from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required # if u require a user to be logged in 
 
 #class based view imports

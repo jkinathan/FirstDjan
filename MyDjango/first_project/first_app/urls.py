@@ -3,7 +3,7 @@ from first_app import views
 
 
 #TEMPLATE TAGGING 
-
+app_name = 'firstapp'
 #so here i removed the app_name = 'firstapp' from this urls.py in first_app  please check the project urls.py for the change
 #edited traditional path links to url links
 urlpatterns = [

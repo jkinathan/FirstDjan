@@ -19,7 +19,8 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('portfolio_site', models.URLField(blank=True)),
                 ('profile_pic', models.ImageField(upload_to=b'profile_pics', blank=True)),
-                ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
+                ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL,on_delete = models.CASCADE)),
+                
             ],
         ),
     ]

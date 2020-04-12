@@ -18,12 +18,12 @@ from django.contrib import admin
 from first_app import views
 from django.conf.urls import include
 
-app_name = 'firstapp' #here is where we included the app_name variable with the name we shall use to call in any of our templates
+#here is where we included the app_name variable with the name we shall use to call in any of our templates
 #for some reason it works perfectly probably a django version issue
 
 urlpatterns = [
     url(r'^$',views.index,name='index'),
-    url(r'^first_app/',include('first_app.urls',namespace='firstapp')),#then i passed in the namespace='firstapp' here to my first_app urls so we can access it to the templates that need it
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^first_app/',include('first_app.urls')),#then i passed in the namespace='firstapp' here to my first_app urls so we can access it to the templates that need it
+    url(r'^admin/', admin.site.urls),
     url(r'^logout/$',views.user_logout,name='logout'),
 ]
