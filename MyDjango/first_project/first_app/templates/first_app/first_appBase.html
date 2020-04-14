@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% comment %} {% load staticfiles %} {% endcomment %}
+<html>
+    <head>
+        <title>{{ title }}</title>
+        {% comment %} <link rel ="stylesheet" href={% static "css/mystyle.css" %}/> {% endcomment %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+         
+          <a class="navbar-brand" href="#" style=""><b>New Class Based Views</b></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="myhover"><a class="nav navbar-brand" href="{% url 'firstapp:list' %}">Schools</a></li>
+            {% comment %} <li><a  class="nav navbar-brand" href="{% url 'firstapp:register' %}">Register</a></li> {% endcomment %}
+            <li><a  class="nav navbar-brand" href="{% url 'admin:index' %}">Admin</a></li>
+            {% comment %} <li><a  class="nav navbar-brand" href="{% url 'firstapp:relname' %}">Other</a></li>  {% endcomment %}
+            
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <br><br><br><br>
+            <div class="container">
+                {% block  body_block%}
+                {% comment %} anything outside this will be inherited {% endcomment %}
+                
+                {% endblock  %}
+            </div>
+        
+    </body>
+</html>
+{% comment %} b4 {% endcomment %}

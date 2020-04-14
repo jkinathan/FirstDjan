@@ -1,8 +1,9 @@
 #FUNCTION BASED VIEWS
 from django.shortcuts import render
 from django.http import HttpResponse
-from first_app.models import Webpage, Topic, Accessrecord
+from first_app.models import Webpage, Topic, Accessrecord, School, Student
 from . import forms
+from . import models
 from first_app.forms import UserForm, UserProfileInfoForm
 
 #these are for the login now
@@ -13,10 +14,22 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required # if u require a user to be logged in 
 
 #class based view imports
-from django.views.generic import View, TemplateView
+from django.views.generic import View, TemplateView, ListView, DetailView
 # Create your views here.
 
-#a class based view for the index 
+#a class based views
+
+class SchoolListView(ListView):
+    #but we can modify it this way
+    context_object_name = 'schools'
+    model = models.School
+    #its returning a list with school_list with underscore
+    
+class SchoolDetailView(DetailView):
+    context_object_name = 'school_detail'#as for detailview it just returns model name lowercase in this case school
+    model = models.School
+    template_name = 'first_app/schoolDetail.html'
+    
 class CBView(TemplateView): #which is inheriting from our imported View
     template_name = 'first_app/Mycbv.html'
     #now doing the returning dictionary
