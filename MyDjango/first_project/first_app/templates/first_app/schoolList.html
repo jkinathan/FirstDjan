@@ -7,7 +7,7 @@
         {% for school in schools %}
         <h2>
             <li>
-                {{ school.name }}
+                <a href="{{ school.id }}"> {{ school.name }}</a>
             </li>
         </h2>
         {% endfor %}

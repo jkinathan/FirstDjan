@@ -21,8 +21,9 @@ from django.views.generic import View, TemplateView, ListView, DetailView
 
 class SchoolListView(ListView):
     #but we can modify it this way
-    context_object_name = 'schools'
-    model = models.School
+    context_object_name = 'schools' #passing in the context name so it fetches for you all data you need
+    model = models.School#telling it the model it deals with
+    template_name = 'first_app/schoolList.html'#define the template it has to deal with
     #its returning a list with school_list with underscore
     
 class SchoolDetailView(DetailView):
