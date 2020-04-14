@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^register/$',views.register,name='register'),
     url(r'^login/$',views.user_login,name='login'),
     url(r'^school/$',views.SchoolListView.as_view(),name='list'), #finally did the magic
-    #some alien regular expressions hahaha
+    #some alien regular expressions 
     url(r'^school/(?P<pk>[-\w]+)/$',views.SchoolDetailView.as_view(),name='detail')# passing in the primarykey related to the particular schools detail
     #this is how we roll
 ]
