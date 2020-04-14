@@ -9,13 +9,13 @@ app_name = 'firstapp'
 urlpatterns = [
     #now we have to start calling the CBV class
     #like url(r'^$',views.CBView.as_view()),
-    url(r'^$',views.CBView.as_view()),
+    url(r'^sch$',views.CBView.as_view()),
     url(r'^formspage',views.form_view_name,name='Myform'),
     url(r'^relative/$', views.relative,name='relname'),#this is the page for testing relative paths in django
     url(r'^register/$',views.register,name='register'),
     url(r'^login/$',views.user_login,name='login'),
-    url(r'^schools/$',views.SchoolListView.as_view(),name='list'),
+    url(r'^school/$',views.SchoolListView.as_view(),name='list'), #finally did the magic
     #some alien regular expressions hahaha
-    url(r'^(?P<pk>[-\w]+)schools/$',views.SchoolDetailView.as_view(),name='detail')# passing in the primarykey related to the particular schools detail
-    
+    url(r'^school/(?P<pk>[-\w]+)/$',views.SchoolDetailView.as_view(),name='detail')# passing in the primarykey related to the particular schools detail
+    #this is how we roll
 ]
