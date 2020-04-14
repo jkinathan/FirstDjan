@@ -3,6 +3,21 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class School(models.Model):
+    name = models.CharField(max_length=254)
+    principal = models.CharField(max_length=24)
+    location = models.CharField(max_length=245)
+    #a string representation of that model incase we want to print it out
+    def __str__(self):
+        return self.name
+    
+class Student(models.Model):
+    name = models.CharField(max_length=50)
+    age = models.PositiveIntegerField()
+    school = models.ForeignKey(School,related_name="students", on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.name
 class UserProfileInfo(models.Model):
     
     user = models.OneToOneField(User, on_delete=models.CASCADE)
