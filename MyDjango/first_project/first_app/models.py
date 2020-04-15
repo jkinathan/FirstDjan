@@ -14,6 +14,8 @@ class School(models.Model):
     def get_absolute_url(self):
         #tell it what primary key this school should be created with ... so we import reverse from url resolvers
         return reverse('firstapp:detail',kwargs={'pk':self.pk})
+    
+
 class Student(models.Model):
     name = models.CharField(max_length=50)
     age = models.PositiveIntegerField()
@@ -28,8 +30,6 @@ class UserProfileInfo(models.Model):
     #additional
     portfolio_site = models.URLField(blank=True)
     profile_pic = models.ImageField(upload_to = 'profile_pics', blank=True)
-    
-    
     
     def __str__(self):
         return self.user.username

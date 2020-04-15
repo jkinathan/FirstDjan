@@ -19,4 +19,5 @@ urlpatterns = [
     url(r'^school/(?P<pk>\d+)/$',views.SchoolDetailView.as_view(),name='detail'),# passing in the primarykey related to the particular schools detail
     #this is how we roll
     url(r'^school/create/$',views.SchoolCreateView.as_view(),name='create'),
+    url(r'^school/update/(?P<pk>\d+)/$',views.SchoolUpdateView.as_view(),name='update'),
 ]

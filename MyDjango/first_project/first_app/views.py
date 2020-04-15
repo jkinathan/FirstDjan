@@ -1,5 +1,6 @@
 #FUNCTION BASED VIEWS
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.http import HttpResponse
 from first_app.models import Webpage, Topic, Accessrecord, School, Student
 from . import forms
@@ -37,7 +38,15 @@ class SchoolCreateView(CreateView):
     fields = ('name', 'principal','location')
     model = models.School    
     
+class SchoolUpdateView(UpdateView):
+    template_name = 'first_app/schoolform.html'
+    model = models.School
+    fields = ('name', 'principal')
 
+class SchoolDeleteView(DeleteView):
+    model = models.School
+    success_url = reverse_lazy('firstapp:list') 
+    #reverse_lazy is for to wait until its actually called  #once successfully deleted a school,you got back to page with all schools which i called list its name
 class CBView(TemplateView): #which is inheriting from our imported View
     template_name = 'first_app/Mycbv.html'
     #now doing the returning dictionary
