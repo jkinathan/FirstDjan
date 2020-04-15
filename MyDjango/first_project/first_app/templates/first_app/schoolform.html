@@ -1,0 +1,17 @@
+{% extends 'first_app/first_appBase.html' %}
+
+{% block body_block %}
+
+    <h1>
+        {% if not form.instance.pk%} <!-- if the instance of the primarykey exists i.e the /1 it will know you need to create a new school-->
+        Create School
+        {% else %}
+        Update School
+        {% endif %}
+    </h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+{% endblock %}

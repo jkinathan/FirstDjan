@@ -14,7 +14,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required # if u require a user to be logged in 
 
 #class based view imports
-from django.views.generic import View, TemplateView, ListView, DetailView
+from django.views.generic import View, TemplateView, ListView, DetailView, CreateView, DeleteView, UpdateView
 # Create your views here.
 
 #a class based views
@@ -31,6 +31,13 @@ class SchoolDetailView(DetailView):
     model = models.School
     template_name = 'first_app/schoolDetail.html'
     
+    
+class SchoolCreateView(CreateView):
+    template_name = 'first_app/schoolform.html'
+    fields = ('name', 'principal','location')
+    model = models.School    
+    
+
 class CBView(TemplateView): #which is inheriting from our imported View
     template_name = 'first_app/Mycbv.html'
     #now doing the returning dictionary

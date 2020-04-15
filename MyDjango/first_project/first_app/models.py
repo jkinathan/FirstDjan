@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 
@@ -10,7 +11,9 @@ class School(models.Model):
     #a string representation of that model incase we want to print it out
     def __str__(self):
         return self.name
-    
+    def get_absolute_url(self):
+        #tell it what primary key this school should be created with ... so we import reverse from url resolvers
+        return reverse('firstapp:detail',kwargs={'pk':self.pk})
 class Student(models.Model):
     name = models.CharField(max_length=50)
     age = models.PositiveIntegerField()
