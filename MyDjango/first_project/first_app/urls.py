@@ -20,4 +20,5 @@ urlpatterns = [
     #this is how we roll
     url(r'^school/create/$',views.SchoolCreateView.as_view(),name='create'),
     url(r'^school/update/(?P<pk>\d+)/$',views.SchoolUpdateView.as_view(),name='update'),
+    url(r'^school/delete/(?P<pk>\d+)/$',views.SchoolDeleteView.as_view(),name='delete'),
 ]

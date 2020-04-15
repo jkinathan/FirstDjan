@@ -1,0 +1,15 @@
+{% extends 'first_app/first_appBase.html' %}
+
+{% block body_block %}
+
+    <h1>
+        Delete {{ school.name }}?
+    </h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% comment %} in order to delete a school, you will have to manually insert in the url like /school/delete/4 where 4 is the id or primary key of the school {% endcomment %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'firstapp:detail' pk=school.pk %}">Cancel</a>
+        </form>
+{% endblock %}
